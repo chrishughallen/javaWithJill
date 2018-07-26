@@ -75,6 +75,33 @@ public class MethodExercises {
     }
 
 
+    public static void rollDice() {
+
+//      Prompt the user to enter the sides of a die
+        System.out.println("Enter the number of sides on your die");
+
+//      Stores the number they enter into an int called userInput using the scanner object
+        int userInput = scanner.nextInt();
+
+//      Creates two random dice roll outcomes based on how many sides the die has
+        int roll1 = (int) Math.ceil(Math.random() * userInput);
+        int roll2 = (int) Math.ceil(Math.random() * userInput);
+
+//      Prints the messages telling them what those random dice rolls were.
+        System.out.printf("The first die was %s \nThe second die was %s\n", roll1,roll2);
+
+//      Prompts the user to play again.
+        System.out.println("Play again? [y/n]");
+
+//      If they enter "y", we use RECURSION to call rollDice() again
+        if (scanner.next().equalsIgnoreCase("y")) {
+            rollDice();
+        }
+
+//      If they don't input "y" this message is displayed and the function
+        System.out.println("Thanks for playing!");
+        }
+
 
 
 
@@ -92,8 +119,8 @@ public class MethodExercises {
         System.out.println(multiplyLoop(5,20));
         System.out.println(divide(10,3));
         System.out.println(modulo(5,2));
-        calculateFactorial();
-
+//        calculateFactorial();
+        rollDice();
 
 
     }
