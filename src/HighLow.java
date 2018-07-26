@@ -10,7 +10,7 @@ public class HighLow {
 
 
 
-    public static int highLowGuessingGame(){
+    public static void highLowGuessingGame(){
         int generatedRandomNumber = (int)Math.ceil(Math.random()*100);
         int usersGuess;
         int remainingNumberOfGuesses = 5;
@@ -31,12 +31,11 @@ public class HighLow {
         if(remainingNumberOfGuesses == 0){
             System.out.println("YOU ARE OUT OF GUESSES!");
         }
-        System.out.println("Would you like to play again? [y,n]\n");
+        System.out.println("Would you like to play again? [y,n]");
         if(scan.next().equalsIgnoreCase("y")){
             System.out.println("Nice! Setting a new random number...");
             highLowGuessingGame();
         }
         System.out.println("Thanks for playing the guessing game!");
-        return generatedRandomNumber;
     }
 }
