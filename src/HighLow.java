@@ -5,6 +5,7 @@ public class HighLow {
     public static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
+
         highLowGuessingGame();
     }
 

@@ -113,13 +113,13 @@ public class MethodExercises {
 
 
     public static void main(String[] args) {
-        System.out.println(add(2, 3));
-        System.out.println(subtract(10, 2));
-        System.out.println(multiply(10,15));
-        System.out.println(multiplyLoop(5,20));
-        System.out.println(divide(10,3));
-        System.out.println(modulo(5,2));
-//        calculateFactorial();
+//        System.out.println(add(2, 3));
+//        System.out.println(subtract(10, 2));
+//        System.out.println(multiply(10,15));
+//        System.out.println(multiplyLoop(5,20));
+//        System.out.println(divide(10,3));
+//        System.out.println(modulo(5,2));
+        calculateFactorial();
         rollDice();
 
 
