@@ -21,7 +21,7 @@ public class Input {
     }
 
     public boolean yesNo() {
-        String userInput = this.scanner.next();
+        String userInput = getString();
         return userInput.equalsIgnoreCase("yes") || userInput.equalsIgnoreCase("y");
     }
 
