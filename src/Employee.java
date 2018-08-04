@@ -1,90 +1,95 @@
-import java.util.Scanner;
+public class Employee extends Department{
 
-public class Employee {
-
-    public static Scanner scanner = new Scanner(System.in);
-
-    public String name;
-    public int employeeNumber;
-    public int age;
+    public String first_name;
+    public String last_name;
+    public int hire_year;
+    public Department department;
+    public double salary;
     public boolean isManager;
 
     public Employee(){
 
     }
 
-    public Employee(String name, int age, boolean isManager){
-        this.name = name;
-        this.employeeNumber = (int)Math.ceil(Math.random()*1000) + 100000;
-        this.age = age;
-        this.isManager = isManager;
+    public Employee(String first_name, String last_name, Department department, int hire_year, double salary) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.department = department;
+        this.hire_year = hire_year;
+        this.salary = salary;
+    }
+
+    public String getFirst_name() {
+        return first_name;
+    }
+
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
+    }
+
+    public String getLast_name() {
+        return last_name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public int getHire_year() {
+        return hire_year;
+    }
+
+    public void setHire_year(int hire_year) {
+        this.hire_year = hire_year;
     }
 
 
-    public String getName() {
-        return name;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    public int getEmployeeNumber() {
-        return employeeNumber;
-    }
-
-    public void setEmployeeNumber(){
-        this.employeeNumber = (int)Math.ceil(Math.random()*100) + 100000;
+    public String getEmployeeDetails(){
+        return first_name + " " + last_name + " is in the " + department.getDepartment() + " department where the job is " + department.getJob_description()
+                + ". " + first_name + " has been with the company since " + hire_year + " and gets paid $" + salary + " per year.";
     }
 
 
-    public int getAge() {
-        return age;
-    }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
-    public boolean isManager() {
-        return isManager;
-    }
 
-    public void setManager(boolean manager) {
-        isManager = manager;
-    }
 
-    public boolean isEligibleForRetirement(){
-        return this.age>=65;
-    }
-
-    public String getEmployeeInfo(){
-
-        System.out.println("Name: " + this.getName());
-        System.out.println("Employee Number: " + this.getEmployeeNumber());
-        System.out.println("Age: " + this.getAge());
-        System.out.println("Is manager: " + this.isManager());
-        return "---";
-    }
-
-    public static void manualEntryOfNewEmployee(){
-        Employee newEmployee = new Employee();
-        System.out.println("Enter the name of the new employee");
-        newEmployee.setName(scanner.nextLine());
-        System.out.println("How old is " + newEmployee.getName());
-        newEmployee.setAge(scanner.nextInt());
-        System.out.printf("Is %s a manager? Enter true or false \n", newEmployee.getName());
-        newEmployee.setManager(scanner.nextBoolean());
-        newEmployee.setEmployeeNumber();
-        System.out.println(newEmployee.getEmployeeInfo());
-
-    }
 
     public static void main(String[] args) {
-        Employee chris = new Employee("Chris Allen", 29, false);
-        Employee alex = new Employee("Alexandra Zaika", 27, true);
-        Employee lawrence = new Employee("Lawrence Allen", 74,true);
 
-        manualEntryOfNewEmployee();
+        Department sales = new Department("Sales", "Selling Stuff");
+        Department it = new Department("IT", "Fixing technical issues");
+        Department design = new Department("Design", "Designing things");
+        Department marketing = new Department("Marketing", "Creating marketing materials");
+        Department research = new Department("Research", "Conducting Research");
+
+        Employee emp1 = new Employee("Chris", "Allen", sales, 2016, 55000);
+        Employee emp2 = new Employee("Dave", "Thomas", design, 2006, 105000);
+        Employee emp3 = new Employee("Robert", "Plant", marketing, 2000, 85000);
+        Employee emp4 = new Employee("Jesse", "Pinkman", research, 2016, 25000);
+        Employee emp5 = new Employee("Saul", "Goodman", it, 2016, 95000);
+
+        Employee[] employees = new Employee[5];
+        employees[0] = emp1;
+        employees[1] = emp2;
+        employees[2] = emp3;
+        employees[3] = emp4;
+        employees[4] = emp5;
+
+
+        for (Employee employee : employees) {
+            System.out.println(employee.getEmployeeDetails());
+        }
+
+
+
     }
 }

@@ -1,5 +1,6 @@
 public class Record {
 
+    private static String dateFormat;
     public String title;
     public String artist;
     public int releaseYear;
@@ -50,14 +51,10 @@ public class Record {
         return "Title: " + title + "\nArtist: " + artist + "\nRelease Year: " + releaseYear + "\nTracks: " + tracks;
     }
 
-    public static void main(String[] args) {
-        Record zep = new Record("Physical Graffiti", "Led Zeppelin", 1979,12);
-        System.out.println(zep.getInfo());
-        recordCollection[0] = zep;
-        for (Record record : recordCollection) {
-            System.out.println(record.getInfo());
 
-        }
+    public static void main(String[] args) {
+
+
     }
 
 
